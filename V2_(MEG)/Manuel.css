@@ -1,0 +1,176 @@
+:root {
+  --lineheight: 1.5em;
+  --standardpadding: 1em;
+  --accentclr: rgba(240, 240, 240, 1);
+  --links: rgb(50, 0, 255);
+  --linksvisited: rgb(100, 50, 140);
+  --clicktext: rgb(40, 20, 120);
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: var(--lineheight);
+  background-image: url("backgroundsnow.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header {
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 4em 1em;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  width: 30px;
+  position: absolute;
+  left: 1em;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1em;
+  padding: var(--standardpadding);
+}
+
+.columns .column {
+  background: var(--accentclr);
+  padding: var(--standardpadding);
+}
+
+.columns .left img {
+  max-width: 100%;
+  height: auto;
+}
+
+.infoboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.infoboxes > div {
+  background: var(--accentclr);
+  padding: var(--standardpadding);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1em;
+  max-width: 400px;
+  flex: 1 1 200px;
+}
+
+.accordion {
+  max-width: 700px;
+  margin: auto;
+  color: #ffffff;
+
+}
+
+.accordion details summary {
+
+  list-style-position: inside;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+details p {
+  padding: 0.5em 1em;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: var(--standardpadding);
+  gap: 35%;
+}
+.footer-left,
+.footer-right {
+  padding: 0;
+}
+.footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-right li {
+  margin: 0.2em 0;
+}
+.footer-right a {
+  color: var(--links);
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+  .navbar {
+    justify-content: flex-end;
+    position: relative;
+  }
+  .columns {
+    grid-template-columns: 1fr;
+  }
+  .infoboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 25%;
+  }
+
+}
